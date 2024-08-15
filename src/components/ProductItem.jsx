@@ -1,15 +1,18 @@
 import React from 'react';
+import { Card, Button, Col } from 'react-bootstrap';
 
 const ProductItem = ({ product }) => {
   return (
-    <div className="card">
-      <img src={product.image} className="card-img-top" alt={product.title} />
-      <div className="card-body">
-        <h5 className="card-title">{product.title}</h5>
-        <p className="card-text">{product.content}</p>
-        <p className="card-text"><strong>{product.price} VND</strong></p>
-      </div>
-    </div>
+    <Col md={3} className="mb-4">
+      <Card>
+        <Card.Img variant="top" src={product.image} />
+        <Card.Body>
+          <Card.Title>{product.title}</Card.Title>
+          <Card.Text>{product.content}</Card.Text>
+          <Button variant="primary">Price: {product.price} VND</Button>
+        </Card.Body>
+      </Card>
+    </Col>
   );
 };
 
